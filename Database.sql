@@ -86,3 +86,26 @@ Where ProductId=@ProductId
 End
 End
 GO
+
+create proc [dbo].[SpCategory]
+@CategoryId int,
+@CategoryName nvarchar(50),
+@IsActiv bit,
+@IUFlag nvarchar(1)
+as 
+begin 
+if(@IUFlag='I')
+begin 
+insert into MCategory(CategoryName,IsActiv) values (@CategoryName,@IsActiv)
+end
+if(@IUFlag='U')
+begin 
+update MCategory 
+set CategoryName=@CategoryName,
+IsActiv =@IsActiv
+where CategoryId=@CategoryId
+end
+end
+
+
+
