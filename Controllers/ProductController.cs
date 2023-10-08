@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,6 +22,7 @@ namespace NimapInfotechMachineTest.Controllers
         public ActionResult Index()
         {
             ViewBag.Category = CategoryList();
+           
             return View();
         }
         public ActionResult Prtial_View()
@@ -104,12 +106,13 @@ namespace NimapInfotechMachineTest.Controllers
             }
             return RedirectToAction("index");
         }
-        public ActionResult ProductReport()
+        public ActionResult ProductReport(int pg = 1)
         {
+
             List<ProductReportModel> _list = new List<ProductReportModel>();
             DataTable dt = new DataTable();
             _connection = new Connection();
-            dt = _connection.FillCombo("Select ProductId,	ProductName,C.CategoryId,CategoryName From MProduct P inner join MCategory C on C.CategoryId=P.CategoryId");
+            dt = _connection.FillCombo("Select ProductId,ProductName,C.CategoryId,CategoryName From MProduct P inner join MCategory C on C.CategoryId=P.CategoryId");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 ProductReportModel model = new ProductReportModel();
@@ -120,10 +123,30 @@ namespace NimapInfotechMachineTest.Controllers
                 model.CategoryName = dt.Rows[i]["CategoryName"].ToString();
                 _list.Add(model);
             }
-            return View(_list);
 
+            const int pageSize = 10;
+            if (pg < 1)
+            {
+                pg = 1;
+            }
+            int totalCount = _list.Count();
+            var pager = new Pager(totalCount, pg, pageSize);
 
+            if (pg > pager.TotalPages)
+            {
+                pg = pager.TotalPages;
+            }
+
+            int recordsToSkip = (pg - 1) * pageSize;
+            var data = _list.Skip(recordsToSkip).Take(pageSize).ToList();
+            ViewBag.pager = pager;
+
+            return View(data);
         }
+
+
+
+
         public ActionResult EditData(int id)
         {
             ViewBag.Category = CategoryList();
