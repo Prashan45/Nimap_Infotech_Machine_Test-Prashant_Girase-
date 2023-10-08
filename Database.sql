@@ -32,34 +32,64 @@ CREATE TABLE [dbo].[MProduct](
 GO
 SET IDENTITY_INSERT [dbo].[MCategory] ON 
 GO
-INSERT [dbo].[MCategory] ([CategoryId], [CategoryName], [IsActiv]) VALUES (1, N'Mobile phones', 1)
+INSERT [dbo].[MCategory] ([CategoryId], [CategoryName], [IsActiv]) VALUES (1, N'Headache', 1)
 GO
-INSERT [dbo].[MCategory] ([CategoryId], [CategoryName], [IsActiv]) VALUES (2, N'Game consoles', 1)
+INSERT [dbo].[MCategory] ([CategoryId], [CategoryName], [IsActiv]) VALUES (2, N'Fever', 1)
 GO
+INSERT [dbo].[MCategory] ([CategoryId], [CategoryName], [IsActiv]) VALUES (3, N'Vomiting', 1)
+GO
+INSERT [dbo].[MCategory] ([CategoryId], [CategoryName], [IsActiv]) VALUES (4, N'Cold', 1)
+GO	
 SET IDENTITY_INSERT [dbo].[MCategory] OFF
 GO
 SET IDENTITY_INSERT [dbo].[MProduct] ON 
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (2, N'Redmi Note 8', 1)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (1, N'Floricet', 1)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (3, N'Vivo Y20G', 2)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (2, N'Paracetamol', 2)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (4, N'Iphone15', 1)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (3, N'Emetrol', 3)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (5, N'Iphone15', 2)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (4, N'Filfast-180', 4)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (6, N'Vivo Y20G', 2)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (5, N'Acetaminophen', 2)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (7, N'Iphone15', 1)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (6, N'Prescription naproxen',1)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (8, N'Vivo Y20G', 1)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (7, N'Meclizine (Bonine)', 3)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (9, N'Vivo Y20G', 1)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (8, N'XYLID-PC Tablet', 4)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (10, N'Game', 2)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (9, N'XYLID-PC Tablet', 1)
 GO
-INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (11, N'Vivo Y20G', 1)
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (10, N'Dolono', 2)
 GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (10, N'ALTRIZ-M',4)
+GO	
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (11, N'Tusq',4)
+GO	
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (12, N'Acetaminophen',2)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (13, N'XYLID-PC Tablet',4)
+GO	
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (14, N'ALTRIZ-M',4)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (15, N'Sumatriptan',1)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (16, N'Aspirin',1)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (17, N'Naproxen ',1)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (18, N'Ibuprofen ',2)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (19, N'Dimenhydrinate  ',3)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (20, N'Ondansetron',3)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (21, N'Pseudoephedrine',4)
+GO
+INSERT [dbo].[MProduct] ([ProductId], [ProductName], [CategoryId]) VALUES (22, N'Chlorpheniramine ',4)
+GO	
 SET IDENTITY_INSERT [dbo].[MProduct] OFF
 GO
 /****** Object:  StoredProcedure [dbo].[SpProduct]    Script Date: 10/5/2023 12:26:44 PM ******/
